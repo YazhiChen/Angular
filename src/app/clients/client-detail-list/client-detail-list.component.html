@@ -1,5 +1,5 @@
 <div class="container">
-  <table class="table table-hover">
+  <table class="table table-hover table-bordered table-striped">
     <tr>
       <td>ID</td>
       <td>Name</td>
@@ -8,6 +8,7 @@
       <td>State</td>
       <td>PostCode</td>
       <td>Country</td>
+      <td>Action</td>
     </tr>
     <tr *ngFor="let client of service.list">
       <td (click)=editForm(client)>{{client.ClientID}}</td>
@@ -18,7 +19,8 @@
       <td (click)=editForm(client)>{{client.PostCode}}</td>
       <td (click)=editForm(client)>{{client.Country}}</td>
       <td>
-        <button (click)=onDelete(client.ClientID) class="btn btn-success btn-lg">Delete</button>
+        <button class="btn btn-sm btn-danger" (click)=onDelete(client.ClientID)>
+          <i class="fa fa-remove"></i>Delete</button>
       </td>
     </tr>
   </table>
