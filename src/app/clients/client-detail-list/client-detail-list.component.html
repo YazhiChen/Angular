@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table table-hover">
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Address</td>
+      <td>City</td>
+      <td>State</td>
+      <td>PostCode</td>
+      <td>Country</td>
+    </tr>
+    <tr *ngFor="let client of service.list">
+      <td (click)=editForm(client)>{{client.ClientID}}</td>
+      <td (click)=editForm(client)>{{client.Name}}</td>
+      <td (click)=editForm(client)>{{client.Address}}</td>
+      <td (click)=editForm(client)>{{client.City}}</td>
+      <td (click)=editForm(client)>{{client.State}}</td>
+      <td (click)=editForm(client)>{{client.PostCode}}</td>
+      <td (click)=editForm(client)>{{client.Country}}</td>
+      <td>
+        <button (click)=onDelete(client.ClientID) class="btn btn-success btn-lg">Delete</button>
+      </td>
+    </tr>
+  </table>
+</div>
